@@ -554,7 +554,7 @@ section:last-of-type {
   align-items: center;
   justify-content: center;
   background: var(--color-bg);
-  animation: intro-cover 1460ms ease forwards;
+  animation: intro-cover 1670ms ease forwards;
 }
 
 .intro-splash__word {
@@ -567,21 +567,35 @@ section:last-of-type {
 }
 
 .intro-splash__letter {
+  display: inline-block;
   opacity: 0;
-  transform: translateY(10px);
-  animation: intro-letter-in 220ms ease forwards;
+  filter: blur(8px);
+  transform-origin: center;
+  transform: scale(0.55) rotate(var(--wobble, 0deg)) translateY(6px);
+  animation: intro-letter-in 380ms cubic-bezier(0.22, 0.9, 0.3, 1) forwards;
 }
 
 @keyframes intro-letter-in {
-  to {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(0.55) rotate(var(--wobble, 0deg)) translateY(6px);
+  }
+  60% {
     opacity: 1;
+    filter: blur(1px);
+    transform: scale(1.08) rotate(calc(var(--wobble, 0deg) * -0.3)) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
     transform: none;
   }
 }
 
 @keyframes intro-cover {
   0%,
-  83% {
+  85% {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;

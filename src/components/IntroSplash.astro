@@ -1,13 +1,20 @@
 ---
 const word = 'yulechka';
 const letters = word.split('');
+// Deterministic per-letter wobble so each letter settles from a slightly
+// different tilt/offset instead of a uniform fade — no two letters land
+// the same way, but the layout never shifts between builds.
+const wobble = [-8, 6, -5, 9, -7, 4, -9, 7];
 ---
 
 <div class="intro-splash" id="intro-splash" aria-hidden="true">
   <div class="intro-splash__word">
     {
       letters.map((letter, i) => (
-        <span class="intro-splash__letter" style={`animation-delay: ${i * 120}ms`}>
+        <span
+          class="intro-splash__letter"
+          style={`animation-delay: ${i * 120}ms; --wobble: ${wobble[i % wobble.length]}deg;`}
+        >
           {letter}
         </span>
       ))
