@@ -19,6 +19,29 @@
   --radius: 2px;
 }
 
+/* Dark palette: mirrors the light one (paper -> ink, ink -> paper), with the
+   two accents brightened so they still clear 4.5:1 against the dark
+   background. Applies by system preference, or by explicit toggle either way. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: #16161a;
+    --color-text: #f2f1ec;
+    --color-muted: #a3a3ad;
+    --color-accent: #7c93ff;
+    --color-accent-2: #e08b5c;
+    --color-line: #2c2c33;
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #16161a;
+  --color-text: #f2f1ec;
+  --color-muted: #a3a3ad;
+  --color-accent: #7c93ff;
+  --color-accent-2: #e08b5c;
+  --color-line: #2c2c33;
+}
+
 *,
 *::before,
 *::after {
@@ -37,6 +60,13 @@ body {
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }
 
 img {
@@ -167,6 +197,7 @@ p:last-child {
 
   .site-header__actions {
     width: 100%;
+    flex-wrap: wrap;
   }
 }
 
