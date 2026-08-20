@@ -1,0 +1,23 @@
+{
+  "name": "cardme",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "og:generate": "node scripts/generate-og.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter-tight": "^5.2.5",
+    "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "@fontsource-variable/unbounded": "^5.3.0",
+    "astro": "^5.2.5"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "puppeteer": "^25.8.0",
+    "satori": "^0.12.2"
+  }
+}

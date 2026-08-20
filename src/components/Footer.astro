@@ -1,0 +1,15 @@
+---
+interface Props {
+  year: number;
+  name: string;
+}
+
+const { year, name } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner mono">
+    <span>© {year} {name}</span>
+    <a href="/llms.txt">/llms.txt</a>
+  </div>
+</footer>

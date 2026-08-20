@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IntroSplash from '../components/IntroSplash.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Stack from '../components/Stack.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import { content, toMarkdown } from '../content/data';
+
+const agentMarkdown = {
+  ru: toMarkdown('ru'),
+  en: toMarkdown('en'),
+};
+---
+
+<Layout content={content.ru}>
+  <IntroSplash />
+  <Header name={content.ru.hero.name} />
+  <main id="main">
+    <div data-lang-block="ru">
+      <Hero content={content.ru} />
+      <About content={content.ru} />
+      <Projects content={content.ru} />
+      <Stack content={content.ru} />
+      <Contact content={content.ru} />
+    </div>
+    <div data-lang-block="en" hidden>
+      <Hero content={content.en} />
+      <About content={content.en} />
+      <Projects content={content.en} />
+      <Stack content={content.en} />
+      <Contact content={content.en} />
+    </div>
+  </main>
+  <Footer year={2026} name={content.ru.hero.name} />
+
+  <script type="application/json" id="agent-markdown" set:html={JSON.stringify(agentMarkdown)} />
+
+  <script>
+    import '../scripts/lang-toggle';
+    import '../scripts/copy-agent';
+    import '../scripts/reveal';
+    import '../scripts/cursor-trail';
+  </script>
+</Layout>

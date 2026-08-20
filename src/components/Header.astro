@@ -1,0 +1,20 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="site-header__name" href="#main">{name}</a>
+    <div class="site-header__actions">
+      <button type="button" class="btn-mono" data-copy-agent data-copied-ru="Скопировано" data-copied-en="Copied">
+        <span data-lang-block="ru">Скопировать для агента</span>
+        <span data-lang-block="en" hidden>Copy for agent</span>
+      </button>
+      <button type="button" class="btn-mono" data-lang-toggle aria-label="Switch language to EN">EN</button>
+    </div>
+  </div>
+</header>

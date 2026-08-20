@@ -1,0 +1,28 @@
+---
+import type { SiteContent } from '../content/data';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const headingId = `contact-heading-${content.htmlLang}`;
+---
+
+<section aria-labelledby={headingId} data-reveal>
+  <div class="wrap">
+    <h2 id={headingId} class="section-title">{content.contact.title}</h2>
+    <p class="contact__intro">{content.contact.intro}</p>
+    <ul class="contact-list">
+      {
+        content.contact.links.map((link) => (
+          <li>
+            <span class="contact-list__label mono">{link.label}</span>
+            <a href={link.href}>{link.value}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="contact__availability">{content.contact.availability}</p>
+  </div>
+</section>

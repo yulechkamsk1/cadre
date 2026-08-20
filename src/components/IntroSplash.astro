@@ -1,0 +1,16 @@
+---
+const word = 'yulechka';
+const letters = word.split('');
+---
+
+<div class="intro-splash" id="intro-splash" aria-hidden="true">
+  <div class="intro-splash__word">
+    {
+      letters.map((letter, i) => (
+        <span class="intro-splash__letter" style={`animation-delay: ${i * 120}ms`}>
+          {letter}
+        </span>
+      ))
+    }
+  </div>
+</div>

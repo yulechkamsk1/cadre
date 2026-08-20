@@ -1,0 +1,32 @@
+---
+import type { SiteContent } from '../content/data';
+import Portrait from './Portrait.astro';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const headingId = `hero-heading-${content.htmlLang}`;
+---
+
+<section class="hero" aria-labelledby={headingId}>
+  <div class="wrap hero__layout">
+    <Portrait alt={content.hero.photoAlt} />
+    <div>
+      <p class="hero__name mono">{content.hero.name}</p>
+      <h1 id={headingId} class="hero__headline">{content.hero.headline}</h1>
+      <p class="hero__subhead">{content.hero.subhead}</p>
+      <span class="hero__status mono">{content.hero.status}</span>
+      <div class="hero__ctas">
+        {
+          content.hero.ctas.map((cta) => (
+            <a class="hero__cta" href={cta.href}>
+              {cta.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

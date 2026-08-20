@@ -1,0 +1,42 @@
+---
+import type { SiteContent } from '../content/data';
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+const headingId = `projects-heading-${content.htmlLang}`;
+---
+
+<section aria-labelledby={headingId} data-reveal>
+  <div class="wrap">
+    <h2 id={headingId} class="section-title">{content.projects.title}</h2>
+    <p class="projects__note mono">{content.projects.note}</p>
+    <div class="project-list">
+      {
+        content.projects.items.map((item, i) => (
+          <article class="project">
+            <div class="project__head">
+              <span class="project__index mono">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="project__name">{item.name}</h3>
+              <span class="project__tag mono">{item.tag}</span>
+            </div>
+            <p class="project__summary">{item.summary}</p>
+            <p class="project__description">{item.description}</p>
+            <ul class="project__stack" aria-label="Stack">
+              {item.stack.map((tech) => (
+                <li class="tag">{tech}</li>
+              ))}
+            </ul>
+            {item.link && (
+              <a class="project__link" href={item.link.href}>
+                {item.link.label}
+              </a>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
