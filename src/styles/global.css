@@ -285,6 +285,49 @@ section:last-of-type {
   }
 }
 
+/* Heading text rises up through a mask instead of a plain fade.
+   Section h2s: hidden only once JS confirms .reveal-pending will lift it
+   (same progressive-enhancement rule as [data-reveal] above — no JS,
+   no hiding). The hero h1 isn't inside a [data-reveal] section since it's
+   above the fold, so it gets a pure-CSS animation instead, timed to start
+   right as the intro splash finishes clearing. */
+.reveal-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.reveal-mask__inner {
+  display: block;
+}
+
+[data-reveal].reveal-pending .reveal-mask__inner {
+  transform: translateY(115%);
+  opacity: 0;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease;
+}
+
+[data-reveal].reveal-pending.is-visible .reveal-mask__inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero__word {
+  transition: color 200ms ease;
+}
+
+.hero__word:hover {
+  color: var(--color-accent-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-mask__inner {
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 /* ---------- Hero ---------- */
 
 .hero {

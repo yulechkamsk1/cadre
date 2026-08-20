@@ -82,7 +82,7 @@ export const content: Record<'ru' | 'en', SiteContent> = {
       name: 'Юлия Савельева',
       headline: 'Строю инструменты, которыми пользуются агенты',
       subhead:
-        'Fullstack-разработчик. Пишу MCP-серверы, настраиваю оркестрацию агентов и делаю фронтенд для высоконагруженного финтеха на Vue 3.',
+        'Fullstack-разработчик. Два года пишу фронтенд на Vue 3 для тяжёлого финтех-продукта, а в свободное время — MCP-серверы и пайплайны из нескольких агентов.',
       status: 'Москва · удалённо или гибрид · открыта к предложениям',
       photoAlt: 'Юлия Савельева',
       ctas: [
@@ -94,43 +94,43 @@ export const content: Record<'ru' | 'en', SiteContent> = {
     about: {
       title: 'Чем занимаюсь',
       paragraphs: [
-        'Два года коммерческой разработки в финтехе: клиентская часть высоконагруженного корпоративного приложения на Vue 3 и серверная логика на PHP и Node.js.',
-        'Параллельно занимаюсь тем, что мне интереснее всего — инструментами для LLM. Написала несколько MCP-серверов под задачи своей команды, перестроила внутреннюю документацию и структуру репозитория так, чтобы агенты читали их без потери контекста, и собрала схему, в которой задача разбивается между несколькими агентами, а инструменты выстраиваются в один пайплайн. Схемы проверяла на реальных задачах команды, а не на демо.',
-        'Сейчас разбираюсь в разработке под Solana: клиент на @solana/web3.js, wallet-adapter, вызовы Anchor-программ.',
-        'Провожу код-ревью и менторю джунов.',
+        'Два года в финтехе: клиентская часть тяжёлого корпоративного приложения на Vue 3, бэкенд — на PHP и Node.js.',
+        'Но больше всего цепляют инструменты для LLM. Написала несколько MCP-серверов под задачи команды, переписала документацию и структуру репозитория так, чтобы агент не терял контекст при чтении, и собрала схему, где задача делится между несколькими агентами. Это не демка — команда пользуется этим каждый день.',
+        'Сейчас разбираюсь в Solana: @solana/web3.js, wallet-adapter, вызовы Anchor-программ.',
+        'Провожу код-ревью, менторю джунов.',
       ],
     },
     projects: {
       title: 'Проекты',
-      note: 'Внутренние наработки с работы — без репозитория, но с описанием подхода.',
+      note: 'Внутреннее — без репозитория, но с честным описанием, что и как делала.',
       items: [
         {
           name: 'MCP-серверы для команды',
           tag: 'без репозитория',
-          summary: 'Набор MCP-серверов под рабочие процессы команды.',
+          summary: 'Агент получает прямой доступ к внутренним системам команды — без копипаста контекста в чат.',
           description:
-            'Агент получает доступ к внутренним данным и инструментам напрямую, вместо копирования контекста в чат руками. Отдельно занималась контролем качества генерации — что и как проверяем, прежде чем код уходит в ревью.',
+            'Раньше контекст копировали в чат руками, теперь агент сам достаёт нужное. Отдельно продумывала, как проверять качество того, что агент генерирует, до того как это попадёт в ревью.',
           stack: ['MCP', 'Claude API', 'GPT API', 'Node.js'],
         },
         {
           name: 'AI Interviewer',
           tag: 'хакатон',
-          summary: 'HR-агент, который проводит первичное интервью с кандидатом в чате.',
-          description: 'Задаёт вопросы, разбирает ответы, собирает результат.',
+          summary: 'Агент проводит первый созвон с кандидатом вместо HR — прямо в чате.',
+          description: 'Задаёт вопросы, разбирает ответы, собирает саммари.',
           stack: ['Claude API', 'чат-интерфейс'],
         },
         {
           name: 'Telegram Task Bot',
           tag: 'командный проект',
-          summary: 'Бот расшифровывает голосовые сообщения и превращает их в план задач.',
-          description: 'Приоритеты расставляются автоматически по содержанию сообщения.',
+          summary: 'Бот расшифровывает голосовые и превращает их в список задач.',
+          description: 'Приоритет каждой задачи бот определяет сам — по смыслу сообщения.',
           stack: ['Python', 'Telegram API', 'speech-to-text'],
         },
         {
           name: 'Payment System',
           tag: 'дипломный проект',
-          summary: 'Логика обработки платежей и координация взаимодействия между сервисами.',
-          description: 'Сервисы синхронизируют состояние платежа на всех этапах обработки.',
+          summary: 'Платёжный флоу и синхронизация состояния между сервисами.',
+          description: 'От создания платежа до подтверждения каждый сервис в цепочке знает актуальный статус.',
           stack: ['PHP', 'PostgreSQL'],
         },
       ],
@@ -167,13 +167,13 @@ export const content: Record<'ru' | 'en', SiteContent> = {
     },
     contact: {
       title: 'Написать',
-      intro: 'Telegram — самый быстрый способ. Отвечаю в течение дня.',
+      intro: 'Telegram — самый быстрый способ достучаться. Отвечаю в течение дня.',
       links: [
         { label: 'Telegram', value: '@yulechkamsk', href: 'https://t.me/yulechkamsk' },
         { label: 'Email', value: 'savelevau634@gmail.com', href: 'mailto:savelevau634@gmail.com' },
         { label: 'GitHub', value: 'yulechkamsk1', href: GITHUB_URL },
       ],
-      availability: 'Открыта к удалённой работе, гибриду и офису в Москве. Полная занятость, частичная или контракт.',
+      availability: 'Готова к удалённой работе, гибриду или офису в Москве. Full-time, part-time, контракт — как удобнее.',
     },
     footer: {
       text: '© 2026 Юлия Савельева',
@@ -196,7 +196,7 @@ export const content: Record<'ru' | 'en', SiteContent> = {
       name: 'Yulia Savelyeva',
       headline: 'I build the tools agents use',
       subhead:
-        'Fullstack developer. I write MCP servers, orchestrate agent pipelines, and build front ends for high-load fintech in Vue 3.',
+        'Fullstack developer. Two years building Vue 3 front ends for a heavy fintech product, and in my own time — MCP servers and multi-agent pipelines.',
       status: 'Moscow · remote or hybrid · open to offers',
       photoAlt: 'Yulia Savelyeva',
       ctas: [
@@ -208,43 +208,43 @@ export const content: Record<'ru' | 'en', SiteContent> = {
     about: {
       title: 'What I do',
       paragraphs: [
-        'Two years of commercial development in fintech: the client side of a high-load corporate application in Vue 3, and server-side logic in PHP and Node.js.',
-        "In parallel, I work on what interests me most — tools for LLMs. I've built several MCP servers for my team's workflows, restructured internal docs and the repository layout so agents can read them without losing context, and put together a scheme where a task splits across several agents with tools chained into one pipeline. I tested these setups on the team's real tasks, not demos.",
-        'Currently learning Solana development: a client on @solana/web3.js, wallet-adapter, calling Anchor programs.',
-        'I do code reviews and mentor junior developers.',
+        'Two years in fintech: the client side of a heavy corporate app in Vue 3, backend in PHP and Node.js.',
+        "What actually gets me excited is tooling for LLMs. I've built MCP servers for my team's workflows, rewritten our docs and repo structure so an agent doesn't lose context mid-read, and put together a setup where a task splits across several agents. Not a demo — the team uses it daily.",
+        'Currently learning Solana: @solana/web3.js, wallet-adapter, calling Anchor programs.',
+        'I review code and mentor juniors.',
       ],
     },
     projects: {
       title: 'Projects',
-      note: 'Internal work from my job — no repository, but the approach is described.',
+      note: 'Internal work — no repo, but an honest account of what I did.',
       items: [
         {
           name: 'MCP servers for the team',
           tag: 'no repository',
-          summary: "A set of MCP servers for the team's workflows.",
+          summary: "An agent gets direct access to the team's internal systems — no more copy-pasting context into a chat.",
           description:
-            "An agent gets direct access to internal data and tools instead of context being copy-pasted into a chat by hand. I separately worked on quality control for generated output — what gets checked, and how, before code goes to review.",
+            'We used to paste context into chat by hand; now the agent pulls what it needs itself. I separately worked out how to check the quality of what the agent generates before it hits review.',
           stack: ['MCP', 'Claude API', 'GPT API', 'Node.js'],
         },
         {
           name: 'AI Interviewer',
           tag: 'hackathon',
-          summary: 'An HR agent that runs a first-round interview with a candidate in chat.',
-          description: 'Asks questions, parses answers, compiles a result.',
+          summary: 'An agent runs the first candidate call instead of HR — right in chat.',
+          description: 'Asks questions, parses answers, writes up a summary.',
           stack: ['Claude API', 'chat interface'],
         },
         {
           name: 'Telegram Task Bot',
           tag: 'team project',
-          summary: 'A bot that transcribes voice messages into a prioritized task list.',
-          description: 'Priorities are set automatically from message content.',
+          summary: 'A bot that transcribes voice messages into a task list.',
+          description: "It sets each task's priority itself, based on what the message actually says.",
           stack: ['Python', 'Telegram API', 'speech-to-text'],
         },
         {
           name: 'Payment System',
           tag: 'thesis project',
-          summary: 'Payment processing logic and coordination between services.',
-          description: 'Services keep payment state in sync across every processing stage.',
+          summary: 'Payment flow and state sync across services.',
+          description: 'From creation to confirmation, every service in the chain knows the current status.',
           stack: ['PHP', 'PostgreSQL'],
         },
       ],

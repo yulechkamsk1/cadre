@@ -11,7 +11,9 @@ const headingId = `stack-heading-${content.htmlLang}`;
 
 <section aria-labelledby={headingId} data-reveal>
   <div class="wrap">
-    <h2 id={headingId} class="section-title">{content.stack.title}</h2>
+    <h2 id={headingId} class="section-title">
+      <span class="reveal-mask"><span class="reveal-mask__inner">{content.stack.title}</span></span>
+    </h2>
     <div class="stack-grid">
       {
         content.stack.groups.map((group) => (
