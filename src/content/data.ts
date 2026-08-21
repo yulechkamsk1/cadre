@@ -105,6 +105,13 @@ export const content: Record<'ru' | 'en', SiteContent> = {
       note: 'Внутреннее — без репозитория, но с честным описанием, что и как делала.',
       items: [
         {
+          name: 'SFS',
+          tag: 'рабочий проект',
+          summary: 'Кредитно-финансовая платформа.',
+          description: 'Кабинет с кредитными заявками, интеграцией с банками, счетами и промокодами.',
+          stack: ['Vue 3', 'PHP (Yii2)', 'Docker'],
+        },
+        {
           name: 'MCP-серверы для команды',
           tag: 'без репозитория',
           summary: 'Агент получает прямой доступ к внутренним системам команды — без копипаста контекста в чат.',
@@ -132,6 +139,7 @@ export const content: Record<'ru' | 'en', SiteContent> = {
           summary: 'Платёжный флоу и синхронизация состояния между сервисами.',
           description: 'От создания платежа до подтверждения каждый сервис в цепочке знает актуальный статус.',
           stack: ['PHP', 'PostgreSQL'],
+          link: { label: 'GitHub', href: 'https://github.com/yulechkamsk1/diplom' },
         },
       ],
     },
@@ -219,6 +227,13 @@ export const content: Record<'ru' | 'en', SiteContent> = {
       note: 'Internal work — no repo, but an honest account of what I did.',
       items: [
         {
+          name: 'SFS',
+          tag: 'work project',
+          summary: 'A credit and finance platform.',
+          description: 'A dashboard for loan applications, bank integrations, invoices, and promo codes.',
+          stack: ['Vue 3', 'PHP (Yii2)', 'Docker'],
+        },
+        {
           name: 'MCP servers for the team',
           tag: 'no repository',
           summary: "An agent gets direct access to the team's internal systems — no more copy-pasting context into a chat.",
@@ -246,6 +261,7 @@ export const content: Record<'ru' | 'en', SiteContent> = {
           summary: 'Payment flow and state sync across services.',
           description: 'From creation to confirmation, every service in the chain knows the current status.',
           stack: ['PHP', 'PostgreSQL'],
+          link: { label: 'GitHub', href: 'https://github.com/yulechkamsk1/diplom' },
         },
       ],
     },
