@@ -41,6 +41,8 @@ export interface SiteContent {
   about: {
     title: string;
     paragraphs: string[];
+    educationLabel: string;
+    education: string;
   };
   projects: {
     title: string;
@@ -99,6 +101,8 @@ export const content: Record<'ru' | 'en', SiteContent> = {
         'Сейчас разбираюсь в Solana: @solana/web3.js, wallet-adapter, вызовы Anchor-программ.',
         'Провожу код-ревью, менторю джунов.',
       ],
+      educationLabel: 'Образование',
+      education: 'РАНХиГС, «Информационные технологии и программирование» — неоконченное высшее.',
     },
     projects: {
       title: 'Проекты',
@@ -107,8 +111,9 @@ export const content: Record<'ru' | 'en', SiteContent> = {
         {
           name: 'SFS',
           tag: 'рабочий проект',
-          summary: 'Кредитно-финансовая платформа.',
-          description: 'Кабинет с кредитными заявками, интеграцией с банками, счетами и промокодами.',
+          summary: 'Кредитно-финансовая платформа: кабинет с кредитными заявками, интеграцией с банками, счетами и промокодами.',
+          description:
+            'Переиспользуемые модульные компоненты на Composition API. Рефакторила legacy-код бэкенда с оглядкой на SOLID.',
           stack: ['Vue 3', 'PHP (Yii2)', 'Docker'],
         },
         {
@@ -221,6 +226,8 @@ export const content: Record<'ru' | 'en', SiteContent> = {
         'Currently learning Solana: @solana/web3.js, wallet-adapter, calling Anchor programs.',
         'I review code and mentor juniors.',
       ],
+      educationLabel: 'Education',
+      education: 'RANEPA, "Information Technology and Programming" — incomplete higher education.',
     },
     projects: {
       title: 'Projects',
@@ -229,8 +236,9 @@ export const content: Record<'ru' | 'en', SiteContent> = {
         {
           name: 'SFS',
           tag: 'work project',
-          summary: 'A credit and finance platform.',
-          description: 'A dashboard for loan applications, bank integrations, invoices, and promo codes.',
+          summary: 'A credit and finance platform: a dashboard for loan applications, bank integrations, invoices, and promo codes.',
+          description:
+            'Reusable modular components built with the Composition API. Refactored legacy backend code with an eye on SOLID.',
           stack: ['Vue 3', 'PHP (Yii2)', 'Docker'],
         },
         {

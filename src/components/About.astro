@@ -17,5 +17,9 @@ const headingId = `about-heading-${content.htmlLang}`;
     <div class="about__body">
       {content.about.paragraphs.map((p) => <p>{p}</p>)}
     </div>
+    <p class="about__education mono">
+      <span class="about__education-label">{content.about.educationLabel}</span>
+      {content.about.education}
+    </p>
   </div>
 </section>

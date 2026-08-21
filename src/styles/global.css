@@ -437,6 +437,20 @@ section:last-of-type {
   margin-bottom: 1.2em;
 }
 
+.about__education {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 12px;
+  max-width: 64ch;
+}
+
+.about__education-label {
+  color: var(--color-accent-2);
+  margin-right: 0.6em;
+}
+
 /* ---------- Projects ---------- */
 
 .projects__note {
