@@ -474,12 +474,27 @@ section:last-of-type {
   padding-top: 0;
 }
 
+.project__name-wrap {
+  margin: 0;
+  font: inherit;
+}
+
 .project__head {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.6rem;
   margin-bottom: 0.5rem;
+}
+
+.project__toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
 }
 
 .project__name {
@@ -529,6 +544,74 @@ section:last-of-type {
 .project__link {
   font-family: var(--font-mono);
   font-size: 13px;
+}
+
+/* Carousel mode: a JS-added enhancement (see project-carousel.ts) that turns
+   the plain vertical list above into a horizontal row of collapsed cards —
+   click one to expand it. `.has-carousel` is only ever added by that script,
+   so with JS disabled or reduced-motion on, the accessible stacked list
+   above is the permanent, fully-visible fallback — nothing here is load
+   bearing for content access. */
+
+.project-list.has-carousel {
+  flex-direction: row;
+  align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1rem;
+  scroll-snap-type: x proximity;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 0 var(--gutter) 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+.has-carousel .project {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 1.1rem 1.1rem 1.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  scroll-snap-align: start;
+  transition: width 380ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 200ms ease;
+}
+
+.has-carousel .project__head {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  min-height: 4.5rem;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.has-carousel .project__detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 380ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 250ms ease;
+}
+
+.has-carousel .project__detail-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.has-carousel .project:has(.project__toggle[aria-expanded='true']) {
+  width: min(420px, 78vw);
+  border-color: var(--color-accent-2);
+}
+
+.has-carousel .project:has(.project__toggle[aria-expanded='true']) .project__detail {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .has-carousel .project:hover {
+    border-color: var(--color-accent-2);
+  }
 }
 
 /* ---------- Stack ---------- */

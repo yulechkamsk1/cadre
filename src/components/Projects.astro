@@ -17,27 +17,41 @@ const headingId = `projects-heading-${content.htmlLang}`;
     <p class="projects__note mono">{content.projects.note}</p>
     <div class="project-list">
       {
-        content.projects.items.map((item, i) => (
-          <article class="project">
-            <div class="project__head">
-              <span class="project__index mono">{String(i + 1).padStart(2, '0')}</span>
-              <h3 class="project__name">{item.name}</h3>
-              <span class="project__tag mono">{item.tag}</span>
-            </div>
-            <p class="project__summary">{item.summary}</p>
-            <p class="project__description">{item.description}</p>
-            <ul class="project__stack" aria-label="Stack">
-              {item.stack.map((tech) => (
-                <li class="tag">{tech}</li>
-              ))}
-            </ul>
-            {item.link && (
-              <a class="project__link" href={item.link.href}>
-                {item.link.label}
-              </a>
-            )}
-          </article>
-        ))
+        content.projects.items.map((item, i) => {
+          const detailId = `project-detail-${content.htmlLang}-${i}`;
+          return (
+            <article class="project">
+              <h3 class="project__name-wrap">
+                <button
+                  type="button"
+                  class="project__head project__toggle"
+                  aria-expanded={i === 0 ? 'true' : 'false'}
+                  aria-controls={detailId}
+                >
+                  <span class="project__index mono">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="project__name">{item.name}</span>
+                  <span class="project__tag mono">{item.tag}</span>
+                </button>
+              </h3>
+              <div class="project__detail" id={detailId}>
+                <div class="project__detail-inner">
+                  <p class="project__summary">{item.summary}</p>
+                  <p class="project__description">{item.description}</p>
+                  <ul class="project__stack" aria-label="Stack">
+                    {item.stack.map((tech) => (
+                      <li class="tag">{tech}</li>
+                    ))}
+                  </ul>
+                  {item.link && (
+                    <a class="project__link" href={item.link.href}>
+                      {item.link.label} ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
+          );
+        })
       }
     </div>
   </div>
