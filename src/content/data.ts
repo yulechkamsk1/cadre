@@ -118,11 +118,12 @@ export const content: Record<'ru' | 'en', SiteContent> = {
         },
         {
           name: 'MCP-серверы для команды',
-          tag: 'без репозитория',
+          tag: 'демо на GitHub',
           summary: 'Агент получает прямой доступ к внутренним системам команды — без копипаста контекста в чат.',
           description:
-            'Раньше контекст копировали в чат руками, теперь агент сам достаёт нужное. Отдельно продумывала, как проверять качество того, что агент генерирует, до того как это попадёт в ревью.',
+            'Раньше контекст копировали в чат руками, теперь агент сам достаёт нужное. Отдельно продумывала, как проверять качество того, что агент генерирует, до того как это попадёт в ревью. Настоящий сервер — внутренний код команды без публичного репозитория; здесь — самостоятельный демо-пересбор той же идеи на моковых данных (таск-трекер, поиск по докам, эвристическая проверка перед ревью).',
           stack: ['MCP', 'Claude API', 'GPT API', 'Node.js'],
+          link: { label: 'GitHub', href: 'https://github.com/yulechkamsk1/agent-ops-mcp' },
         },
         {
           name: 'AI Interviewer',
@@ -243,11 +244,12 @@ export const content: Record<'ru' | 'en', SiteContent> = {
         },
         {
           name: 'MCP servers for the team',
-          tag: 'no repository',
+          tag: 'demo on GitHub',
           summary: "An agent gets direct access to the team's internal systems — no more copy-pasting context into a chat.",
           description:
-            'We used to paste context into chat by hand; now the agent pulls what it needs itself. I separately worked out how to check the quality of what the agent generates before it hits review.',
+            "We used to paste context into chat by hand; now the agent pulls what it needs itself. I separately worked out how to check the quality of what the agent generates before it hits review. The real server is internal team code with no public repo; this is a standalone rebuild of the same idea against mock data (task tracker, docs search, a heuristic pre-review check).",
           stack: ['MCP', 'Claude API', 'GPT API', 'Node.js'],
+          link: { label: 'GitHub', href: 'https://github.com/yulechkamsk1/agent-ops-mcp' },
         },
         {
           name: 'AI Interviewer',
